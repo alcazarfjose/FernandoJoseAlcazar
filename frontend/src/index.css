@@ -2,3 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+    /* index.css or App.css */
+    body {
+      background-color: #dbc8bd; /* Replace with your desired color */
+      margin: 0; /* Remove default body margin */
+      padding: 0; /* Remove default body padding */
+    }
