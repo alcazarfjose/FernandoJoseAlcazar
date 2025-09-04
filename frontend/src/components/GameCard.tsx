@@ -8,12 +8,16 @@ type GameCardProps = {
   link: string;
 };
 
+const images = import.meta.glob("../assets/images/*", { eager: true, import: "default" })
+
 const GameCard: React.FC = ({ name, date, bullets, image }) => {
   const [isTop, setIsTop] = useState(false);
 
   // w-128 h-144
   return (
-    <div className="row-span-2 w-full h-144 relative overflow-hidden content-center bg-white">
+    <div className="row-span-2 w-full aspect-[9/10] relative overflow-hidden content-center bg-white">
+
+      {/* THUMBNAIL */}
       <button
         onClick={() => setIsTop(!isTop)}
         className={`z-10 absolute w-full h-1/2 bg-blue-500 text-white cursor-pointer
@@ -22,13 +26,30 @@ const GameCard: React.FC = ({ name, date, bullets, image }) => {
       >
         Click
       </button>
+
+      {/* SNIPPED COVER AND LINK */}
+        {/* link */}
+      <a 
+        href="https://cannedcorgies.itch.io/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <img
+          src={images[`../assets/images/${"itchPanel.png"}`]}
+          alt={"Itch Panel"}
+          className={`w-3/4 absolute bottom-0 right-0 translate-x-5/8 translate-y-1/4`}
+        />
+      </a>
+        {/* snipped cover*/}
       <div className={`
-          absolute bottom-0 h-1/2 bg-red-400
+          absolute bottom-0 h-1/2 bg-white
           w-[200%]  /* wider than parent */
           transition-transform duration-700 ease-in-out
           [clip-path:polygon(0_0,100%_0,100%_calc(100%-400px),calc(100%-400px)_100%,0_100%)]
           ${isTop ? "-translate-x-80" : "translate-x-0"}
-        `}></div>
+        `}/>
+      
+      {/* CONTENT */}
       <div
         className={`content-center transition-all duration-1000 ${
           isTop ? "opacity-100" : "opacity-0"
