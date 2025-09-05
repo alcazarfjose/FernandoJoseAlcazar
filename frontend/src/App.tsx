@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import GameCard from "./components/GameCard";
 import TextPrompt from "./components/TextPrompt";
+import VerticalLabel from "./components/VerticalText";
 
 function App() {
   const [intro01, setIntro01] = useState(false); // hello.
@@ -19,12 +20,21 @@ function App() {
   }, [intro05]);
 
   return (
-    <div className="h-screen w-screen relative overflow-x-hidden">
+    <div className="h-screen w-screen relative overflow-x-hidden bg-background">
       <TextPrompt label="hello. " setShow={setIntro01} rules="absolute top-15 left-40 w-full text-black text-5xl font-semibold" />
       {intro01 && <TextPrompt label="my name is fern. " setShow={setIntro02} rules="absolute top-25 left-60 w-full text-black text-5xl font-semibold"/>}
       {intro02 && <TextPrompt label="i make small games. " setShow={setIntro03} rules="absolute top-40 left-200 w-full text-black text-5xl font-semibold"/>}
       {intro03 && <TextPrompt label="for ideas i think are cool. " setShow={setIntro04} rules="absolute top-50 left-180 w-full text-black text-5xl font-semibold" />}
       {intro04 && <TextPrompt label="here are some of them. " setShow={setIntro05} rules="absolute top-70 left-150 w-full text-black text-5xl font-semibold" />}
+
+      <div className="absolute top-full grid grid-cols-3 grid-rows-4 w-screen" ref={gridRef}>
+        <VerticalLabel text="Gamer" pos="top-0" color="text-green-600" />
+        <VerticalLabel text="About" pos="top-0" color="text-purple-500" />
+        <VerticalLabel text="About" pos="top-0" color="text-purple-500" />
+        <VerticalLabel text="About" pos="top-0" color="text-purple-500" />
+        <VerticalLabel text="About" pos="top-0" color="text-purple-500" />
+      </div>
+
 
       { intro05 && <div className="absolute top-full grid grid-cols-3 grid-rows-4 w-screen" ref={gridRef}>
         <GameCard

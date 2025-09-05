@@ -3,9 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-    /* index.css or App.css */
-    body {
-      background-color: #dbc8bd; /* Replace with your desired color */
-      margin: 0; /* Remove default body margin */
-      padding: 0; /* Remove default body padding */
-    }
+@theme {
+  --color-background: #dacac4;
+  --color-primary: #f7c9b6;
+  --color-secondary: #dbc39a;
+  --color-tertiary: #dae7dd;
+}
