@@ -4,8 +4,13 @@
 @tailwind utilities;
 
 @theme {
-  --color-background: #dacac4;
+  --color-background: #ffffff;
   --color-primary: #f7c9b6;
   --color-secondary: #dbc39a;
   --color-tertiary: #dae7dd;
+  --davys-gray: #5B5B5Bff;
+  --saffron: #FDC74Dff;
+  --bittersweet: #F45C50ff;
+  --raspberry: #DB2556ff;
+  --light-sea-green: #01B1B0ff;
 }
