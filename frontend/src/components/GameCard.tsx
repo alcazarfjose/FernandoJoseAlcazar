@@ -3,18 +3,28 @@ const glyphs = ["₊˚", "✦", "✧", "*:", "☆", "☄", "✺", "❖", " "];
 // https://manonghignoni.wixsite.com/portfolio
 
 type GameCardProps = {
+  index: number;
   name: string;
   date: string;
   image: string;
   bullets: string[];
   link: string;
+  selectedIndex: number | null;
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 const images = import.meta.glob("../assets/images/*", { eager: true, import: "default" });
 
-const GameCard: React.FC<GameCardProps> = ({ name, date, bullets, image, link }) => {
-  const [isTop, setIsTop] = useState(false);
+const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, link, selectedIndex, setSelectedIndex }) => {
+  //const [isTop, setIsTop] = useState(false);
+  const isTop = selectedIndex === index;
   const [tooltip, setTooltip] = useState<{ x: number; y: number } | null>(null);
+
+  const updateSelect = (index) => {
+    console.log(selectedIndex);
+    if (isTop) { setSelectedIndex(-1) } else { setSelectedIndex(index)};
+    
+  };
 
   // title bubbling
   const [displayName, setDisplayName] = useState(name);
@@ -58,7 +68,7 @@ const GameCard: React.FC<GameCardProps> = ({ name, date, bullets, image, link })
     <div className="row-span-2 w-full aspect-[9/10] relative content-center">
       {/* THUMBNAIL */}
       <button
-        onClick={() => setIsTop(!isTop)}
+        onClick={() => updateSelect(index)}
         onMouseMove={(e) => setTooltip({ x: e.clientX, y: e.clientY })}
         onMouseLeave={() => setTooltip(null)}
         className={`z-10 absolute w-full h-1/2 bg-blue-500 text-white cursor-pointer overflow-hidden
@@ -89,7 +99,7 @@ const GameCard: React.FC<GameCardProps> = ({ name, date, bullets, image, link })
         }`}
       >
         {/* link */}
-        <a href={"https://itch.io"} target="_blank" rel="noopener noreferrer">
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <img
             src={images[`../assets/images/${"itchPanel.png"}`]}
             alt={"Itch Panel"}
