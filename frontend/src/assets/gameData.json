@@ -39,7 +39,7 @@
     "bullets": [
       "prototype for a physics-based interactions platformer",
       "custom physics for expressive controls",
-      ""
+      "minimalistic abstract style to focus on gameplay feel"
     ],
     "subtitle": "stay tuned",
     "size": "small",
@@ -66,6 +66,11 @@
       "UI designer",
       "sound designer"
     ],
+    "bullets": [
+      "5-10 minute narrative experience of a family's morning routine",
+      "\"hopping\" UI interface system for gesture-based minigames",
+      "simple models and strong colors for visual clarity"
+    ],
     "subtitle": "",
     "size": "large",
     "image": "fresas.gif",
@@ -90,6 +95,12 @@
       "UX programmer",
       "UI designer",
       "sound designer"
+    ],
+    "bullets": [
+      "10 minute short story about the nostalgia of moving back home",
+      "repetitive core verb for rhythmic story told through minigames",
+      "low-poly modeling for retro aesthetic",
+      "featuring \"Big Cloud\" by Radiator Hospital"
     ],
     "subtitle": "Big Cloud",
     "size": "large",
@@ -116,6 +127,11 @@
       "UI designer",
       "sound designer"
     ],
+    "bullets": [
+      "a short interactive rocket launch sequence",
+      "diverse player verbs and UI panels inspired by Rube-Goldberg machines",
+      "algorithmic music akin to live-coding, to convey rising tension"
+    ],
     "subtitle": "See you, Major Redwick.",
     "size": "large",
     "image": "majorRedwick.gif",
@@ -139,6 +155,12 @@
       "3D artist",
       "UX programmer",
       "sound designer"
+    ],
+    "bullets": [
+      "simple music box winding interaction with \"flashback\" events",
+      "early exploration of gesture cause-and-effects",
+      "broken UI to display ",
+      "music produced through pitch-shifting trigger objects"
     ],
     "subtitle": "Too old.",
     "size": "large",
@@ -164,6 +186,7 @@
       "physics programmer",
       "sound designer"
     ],
+    "bullets": [],
     "subtitle": "",
     "size": "small",
     "image": "Prototype__Wind01.gif",
@@ -188,6 +211,7 @@
       "physics programmer",
       "sound designer"
     ],
+    "bullets": [],
     "subtitle": "",
     "size": "small",
     "image": "Prototype__Garden.gif",
@@ -209,6 +233,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "we will never meet.",
     "size": "small",
     "image": "Prototype__TwoHearts.gif",
@@ -233,6 +258,7 @@
       "3D artist",
       "sound designer"
     ],
+    "bullets": [],
     "subtitle": "From the heart.",
     "size": "small",
     "image": "Umbrella.gif",
@@ -256,6 +282,7 @@
       "constellations programmer",
       "UI/ UX"
     ],
+    "bullets": [],
     "subtitle": "Symphony of stars.",
     "size": "small",
     "image": "Product__Staccato.gif",
@@ -279,6 +306,7 @@
       "technical artist",
       "level designer"
     ],
+    "bullets": [],
     "subtitle": "Reach for the light.",
     "size": "large",
     "image": "Product__Lamplight03.gif",
@@ -300,6 +328,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Okay, three, two, one, let's jam.",
     "size": "small",
     "image": "Prototype__Parkour.gif",
@@ -321,6 +350,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Ground control to Major fern...",
     "size": "small",
     "image": "Prototype__ComfortablyNumb.gif",
@@ -345,6 +375,7 @@
       "level designer",
       "physics programmer"
     ],
+    "bullets": [],
     "subtitle": "Go to the light!",
     "size": "small",
     "image": "ElevatorPitch01.gif",
@@ -366,6 +397,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Small world.",
     "size": "small",
     "image": "Prototype__EarlyMorningTraffic.gif",
@@ -387,6 +419,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "We are together.",
     "size": "small",
     "image": "Prototype__TheLadybugAndMe.gif",
@@ -408,6 +441,7 @@
       "unity engine lead",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Power in the palm of your hand.",
     "size": "small",
     "image": "Prototype__ElevatorPitch04.gif",
@@ -429,6 +463,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Jump on the dance floor!",
     "size": "small",
     "image": "Prototype__Soundwaves.gif",
@@ -450,6 +485,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "nyyyOOooommmmm...",
     "size": "small",
     "image": "Prototype__Teleporting.gif",
@@ -471,6 +507,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Two's a crowd...",
     "size": "small",
     "image": "Prototype__StickTogether.gif",
@@ -492,6 +529,7 @@
       "unreal engine",
       "grow programmer"
     ],
+    "bullets": [],
     "subtitle": "Nothing lasts forever.",
     "size": "small",
     "image": "Grow.gif",
@@ -513,6 +551,7 @@
       "javaSscript",
       "phaser.js"
     ],
+    "bullets": [],
     "subtitle": "One button to rule them all!",
     "size": "small",
     "image": "Ripple.gif",
@@ -534,6 +573,7 @@
       "javaScript",
       "phaser.js"
     ],
+    "bullets": [],
     "subtitle": "How far can you go?",
     "size": "small",
     "image": "Prototype__DrillDrillDrill.gif",
@@ -556,6 +596,7 @@
       "prototyper",
       "technical artist"
     ],
+    "bullets": [],
     "subtitle": "[bahhhhh]",
     "size": "small",
     "image": "sheep.gif",
@@ -577,6 +618,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Take charge of time.",
     "size": "small",
     "image": "Prototype__TimeDilation.gif",
@@ -598,6 +640,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "[No affiliation with Nintendo]",
     "size": "small",
     "image": "Prototype__Kirby'sDreamCourse.gif",
@@ -619,6 +662,7 @@
       "unity",
       "prototyper"
     ],
+    "bullets": [],
     "subtitle": "Gotta start somewhere!",
     "size": "small",
     "image": "Prototype__Flick.gif",

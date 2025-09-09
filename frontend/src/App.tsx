@@ -56,7 +56,7 @@ function App() {
               date = {project.date}
               image = {project.image}
               link = {project.link}
-              bullets = {["howdy", "howdy", "howdy"]}
+              bullets = {project.bullets}
               selectedIndex = {selectedIndex}
               setSelectedIndex = {setSelectedIndex}
             />
