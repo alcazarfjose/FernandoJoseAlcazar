@@ -10,12 +10,13 @@ type GameCardProps = {
   bullets: string[];
   link: string;
   selectedIndex: number | null;
+  skills: string[];
   setSelectedIndex: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 const images = import.meta.glob("../assets/images/*", { eager: true, import: "default" });
 
-const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, link, selectedIndex, setSelectedIndex }) => {
+const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, link, selectedIndex, skills, setSelectedIndex }) => {
   //const [isTop, setIsTop] = useState(false);
   const isTop = selectedIndex === index;
   const [tooltip, setTooltip] = useState<{ x: number; y: number } | null>(null);
@@ -71,16 +72,26 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
         onClick={() => updateSelect(index)}
         onMouseMove={(e) => setTooltip({ x: e.clientX, y: e.clientY })}
         onMouseLeave={() => setTooltip(null)}
-        className={`z-10 absolute w-full h-1/2 bg-blue-500 text-white cursor-pointer overflow-hidden
+        className={`group z-10 absolute w-full h-1/2 bg-blue-500 text-white cursor-pointer overflow-hidden
           transition-all duration-450 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]
           ${isTop ? "top-0" : "top-1/2"}`}
       >
+        {/* thumbnail image */}
         <img
           src={images[`../assets/images/${image}`]}
-          alt={"Game Card Thumbnail"}
-          className="w-full h-full object-cover object-center transition-transform duration-300 ease-in-out hover:scale-125 hover:brightness-110"
+          alt="Game Card Thumbnail"
+          className="w-full h-full object-cover object-center transition-transform duration-300 ease-in-out group-hover:scale-125 group-hover:brightness-110 group-hover:blur-xs"
         />
+
+        {/* Overlay with name */}
+        <div
+          className="absolute inset-0 flex items-center justify-center bg-black/50 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <span className="text-white text-lg font-bold">{name}</span>
+        </div>
       </button>
+
 
       {/* DATE TOOLTIP */}
       {tooltip && (
@@ -113,7 +124,16 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
             w-[200%] transition-transform duration-700 ease-in-out translate-y-2
             [clip-path:polygon(0_0,100%_0,100%_40%,40%_100%,0_100%)]
             ${isTop ? "-translate-x-80" : "translate-x-0"}`}
-        />
+        >
+          {/* SKILLS STRIP */}
+          <div className={`absolute w-[200%] bottom-10 inline-block animate-marquee`}>
+            {skills.map((skill, idx) => (
+              <span key={idx} className="mx-6 text-9xl">
+                • {skill}
+              </span>
+            ))}
+          </div>
+        </div>
 
         {/* name */}
         <h1
@@ -146,7 +166,10 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
           })}
         </ul>
 
+        <div className="absolute top-full"> hello folks </div>
+
       </div>
+
     </div>
   );
 };

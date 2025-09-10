@@ -14,3 +14,16 @@
   --raspberry: #DB2556ff;
   --light-sea-green: #01B1B0ff;
 }
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 30s linear infinite;
+  flex-shrink: 0;
+}
+
