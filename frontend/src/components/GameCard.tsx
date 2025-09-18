@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import SkillPills from "./SkillsPills";
 const glyphs = ["₊˚", "✦", "✧", "*:", "☆", "☄", "✺", "❖", " "];
 // https://manonghignoni.wixsite.com/portfolio
+
+const keywords = ["unity", "netcode", "relay", "ui"];
 
 type GameCardProps = {
   index: number;
@@ -11,14 +14,16 @@ type GameCardProps = {
   link: string;
   selectedIndex: number | null;
   skills: string[];
+  text: string;
   setSelectedIndex: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 const images = import.meta.glob("../assets/images/*", { eager: true, import: "default" });
 
-const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, link, selectedIndex, skills, setSelectedIndex }) => {
+const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, link, selectedIndex, skills, text, setSelectedIndex }) => {
   //const [isTop, setIsTop] = useState(false);
   const isTop = selectedIndex === index;
+  const [showText, setShowText] = useState(false);
   const [tooltip, setTooltip] = useState<{ x: number; y: number } | null>(null);
 
   const updateSelect = (index) => {
@@ -72,9 +77,9 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
         onClick={() => updateSelect(index)}
         onMouseMove={(e) => setTooltip({ x: e.clientX, y: e.clientY })}
         onMouseLeave={() => setTooltip(null)}
-        className={`group z-10 absolute w-full h-1/2 bg-blue-500 text-white cursor-pointer overflow-hidden
+        className={`group z-20 absolute w-full h-1/2 bg-blue-500 text-white cursor-pointer overflow-hidden
           transition-all duration-450 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]
-          ${isTop ? "top-0" : "top-1/2"}`}
+          ${isTop ? "top-0 drop-shadow-xl" : "top-1/2"}`}
       >
         {/* thumbnail image */}
         <img
@@ -83,9 +88,9 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
           className="w-full h-full object-cover object-center transition-transform duration-300 ease-in-out group-hover:scale-125 group-hover:brightness-110 group-hover:blur-xs"
         />
 
-        {/* Overlay with name */}
+        {/* overlay with name */}
         <div
-          className="absolute inset-0 flex items-center justify-center bg-black/50 
+          className="absolute inset-0 flex items-center justify-center bg-black/50
                     opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
           <span className="text-white text-lg font-bold">{name}</span>
@@ -114,38 +119,53 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
           <img
             src={images[`../assets/images/${"itchPanel.png"}`]}
             alt={"Itch Panel"}
-            className="w-full absolute bottom-0 right-0 translate-x-1/8 translate-y-3/8 hover:scale-130 transition-transform duration-150 ease-in-out"
+            className="w-full absolute bottom-0 left-45 scale-85 translate-x-1/8 translate-y-3/8 hover:scale-95 transition-transform duration-150 ease-in-out"
           />
         </a>
 
         {/* snipped cover */}
         <div
-          className={`absolute bottom-0 h-full bg-(--saffron)
+          className={`absolute bottom-0 h-full bg-(--color-background)
             w-[200%] transition-transform duration-700 ease-in-out translate-y-2
-            [clip-path:polygon(0_0,100%_0,100%_40%,40%_100%,0_100%)]
+            [clip-path:polygon(0_0,100%_0,85%_10%,50%_100%,0_100%)]
             ${isTop ? "-translate-x-80" : "translate-x-0"}`}
         >
-          {/* SKILLS STRIP */}
-          <div className={`absolute w-[200%] bottom-10 inline-block animate-marquee`}>
-            {skills.map((skill, idx) => (
-              <span key={idx} className="mx-6 text-9xl">
-                • {skill}
-              </span>
-            ))}
+
+          {/* date */}
+          <div className={`absolute w-1/4 top-10 right-110 text-right inline-block text-(--color-light-background) textfont-bold text-6xl text-wrap`}>
+            {date}
           </div>
+
+          {/* SKILLS STRIP */}
+          <div className="absolute flex left-80 gap-2 mt-3 bottom-5 overflow-visible z-10 marquee-container content-center 
+          cursor-pointer
+          transition-transform duration-300 ease-in-out 
+          hover:scale-105">
+            <div className="flex gap-2 text-[--color-light-background] font-bold group-hover:scale-110 marquee-content">
+              {skills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-xl rounded-full bg-gray-800 text-white font-medium whitespace-nowrap shadow-md group-hover:shadow-lg group-hover:shadow-[--color-light-background]/30"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
         </div>
 
         {/* name */}
         <h1
-          className={`absolute font-bold top-0 text-4xl text-(--davys-gray) text-center whitespace-nowrap`}
+          className={`absolute font-bold top-5 left-5 text-5xl text-(--davys-gray) text-center whitespace-nowrap drop-shadow-lg`}
         >
           {displayName}
         </h1>
 
         {/* bullet points */}
         <ul
-          className={`rounded-md font-sans font-semibold text-(--davys-gray) absolute top-1/4 pl-4 ml-4 list-none text-m space-y-2 transition-all duration-1500 ease-in-out
-          ${isTop ? "translate-x-0" : "translate-x-80"}`}
+          className={`rounded-md font-sans font-semibold text-(--davys-gray) absolute top-1/4 pl-4 ml-4 text-2xl list-none text-m space-y-10 transition-all duration-1500 ease-in-out cursor-pointer
+            ${isTop ? "translate-x-0" : "translate-x-80"}`}
         >
           {bullets.map((desc, index) => {
             const [glyph, setGlyph] = useState(glyphs[0]);
@@ -153,23 +173,66 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
             useEffect(() => {
               const interval = setInterval(() => {
                 setGlyph(glyphs[Math.floor(Math.random() * glyphs.length)]);
-              }, 400 + Math.random() * 600); // async updates
+              }, 400 + Math.random() * 600);
               return () => clearInterval(interval);
             }, []);
 
             return (
-              <li key={index} className="before:mr-2 before:inline-block relative hover:bg-white">
+              <li
+                key={index}
+                className="before:mr-2 before:inline-block relative group"
+              >
                 <span className="absolute -left-4">{glyph}</span>
-                {desc}
+
+                {desc.split(" ").map((word, i) => {
+                  const isKeyword = keywords.includes(word.toLowerCase());
+                  return (
+                    <span
+                      key={i}
+                      className={`
+                        transition-colors duration-100 drop-shadow-md
+                        ${isKeyword ? "group-hover:text-[--color-light-background] group-hover:bg-white" : ""}
+                      `}
+                    >
+                      {word}{" "}
+                    </span>
+                  );
+                })}
               </li>
             );
           })}
         </ul>
 
-        <div className="absolute top-full"> hello folks </div>
-
       </div>
+      {/* post mortem */}
+      {isTop && (
+        <div className="z-30 absolute top-full w-full h-1/2 bg-[--color-background] flex items-center justify-center overflow-hidden">
+          <div className="relative flex flex-col items-center">
+            {/* sliding/fading panel */}
+            <div
+              className={`relative transition-all duration-500 ease-in-out transform origin-top
+                ${showText ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-95"}
+                w-3/4 h-1/4 p-4 flex flex-col z-30
+                overflow-auto-y`}
+            >
+              <p className="text-(--davys-gray) whitespace-pre-line">{text}</p>
+            </div>
 
+            {/* toggle button */}
+            <button
+              onClick={() => setShowText(!showText)}
+              className={`mt-4 px-6 py-3 border border-(--davys-gray) bg-(--color-background) 
+                          hover:bg-(--color-light-background) text-(--davys-gray) rounded-full 
+                          transition-all duration-500 ease-in-out cursor-pointer
+                          transform ${showText ? "translate-y-0" : "translate-y-10 animate-pulse"}`}
+            >
+              {showText ? "Close" : "Post Mortem"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      
     </div>
   );
 };

@@ -4,12 +4,16 @@
     "title": "what do you want to do tonight?",
     "date": "May 2025",
     "skills": [
-      "prototyper",
-      "storyteller"
+      "multiplayer programmer",
+      "gameplay programmer",
+      "technical artist",
+      "game designer",
+      "3D artist"
     ],
     "bullets": [
-      "more coming soon...",
-      "a social microgame mayhem set in rural California",
+      "ongoing solo project",
+      "a social sandbox co-op experience set in rural California",
+      "diverse gesture-based microgame exhibits",
       "hosted using Unity Netcode and Relay"
     ],
     "subtitle": "stay tuned",
@@ -30,16 +34,15 @@
     "title": "Presentiment",
     "date": "May 2025",
     "skills": [
-      "prototyper",
-      "technical artist",
-      "sound designer",
       "physics programmer",
-      "level designer"
+      "sound designer",
+      "prototyper"
     ],
     "bullets": [
       "prototype for a physics-based interactions platformer",
       "custom physics for expressive controls",
-      "minimalistic abstract style to focus on gameplay feel"
+      "procedural animations for organic collision reaction",
+      "core pulse mechanic for communicating with environment"
     ],
     "subtitle": "stay tuned",
     "size": "small",
@@ -59,17 +62,16 @@
     "title": "Fresas Con Crema",
     "date": "January 2025",
     "skills": [
-      "prototyper",
+      "mechanics programmer",
       "technical artist",
-      "3D artist",
-      "UX programmer",
       "UI designer",
+      "3D artist",
       "sound designer"
     ],
     "bullets": [
       "5-10 minute narrative experience of a family's morning routine",
       "\"hopping\" UI interface system for gesture-based minigames",
-      "simple models and strong colors for visual clarity"
+      "experiential kinetic verbs to serve experiential gameplay"
     ],
     "subtitle": "",
     "size": "large",
@@ -548,7 +550,7 @@
     "title": "Ripple",
     "date": "2023",
     "skills": [
-      "javaSscript",
+      "javaScript",
       "phaser.js"
     ],
     "bullets": [],
