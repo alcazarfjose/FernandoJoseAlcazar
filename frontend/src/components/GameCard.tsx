@@ -206,32 +206,35 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
       </div>
       {/* post mortem */}
       {isTop && (
-        <div className="z-30 absolute top-full w-full h-1/2 bg-[--color-background] flex items-center justify-center overflow-hidden">
-          <div className="relative flex flex-col items-center">
+        <div className="absolute top-full w-full h-1/2 bg-[--color-background] flex items-center justify-center overflow-hidden z-30">
+          <div className="relative flex flex-col items-center w-3/4 h-3/4">
             {/* sliding/fading panel */}
             <div
-              className={`relative transition-all duration-500 ease-in-out transform origin-top
+              className={`transition-all duration-500 ease-in-out transform origin-top
                 ${showText ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-95"}
-                w-3/4 h-1/4 p-4 flex flex-col z-30
-                overflow-auto-y`}
+                w-full h-3/4 p-4 flex flex-col z-30`}
             >
-              <p className="text-(--davys-gray) whitespace-pre-line">{text}</p>
+              {showText && (
+                <div className="flex-1 overflow-y-auto pr-2 max-h-full">
+                  <p className="text-(--davys-gray) whitespace-pre-line">{text}</p>
+                </div>
+              )}
             </div>
 
             {/* toggle button */}
             <button
               onClick={() => setShowText(!showText)}
-              className={`mt-4 px-6 py-3 border border-(--davys-gray) bg-(--color-background) 
+              className={`absolute top-1/2 z-30
+                          px-6 py-3 border border-(--davys-gray) bg-(--color-background) 
                           hover:bg-(--color-light-background) text-(--davys-gray) rounded-full 
                           transition-all duration-500 ease-in-out cursor-pointer
-                          transform ${showText ? "translate-y-0" : "translate-y-10 animate-pulse"}`}
+                          transform ${showText ? "translate-y-20" : "translate-y-0 animate-pulse"}`}
             >
               {showText ? "Close" : "Post Mortem"}
             </button>
           </div>
         </div>
       )}
-
       
     </div>
   );
