@@ -127,7 +127,7 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
         <div
           className={`absolute bottom-0 h-full bg-(--color-background)
             w-[200%] transition-transform duration-700 ease-in-out translate-y-2
-            [clip-path:polygon(0_0,100%_0,85%_10%,50%_100%,0_100%)]
+            [clip-path:polygon(0_0,100%_0,95%_10%,60%_100%,0_100%)]
             ${isTop ? "-translate-x-80" : "translate-x-0"}`}
         >
 
@@ -135,6 +135,47 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
           <div className={`absolute w-1/4 top-10 right-110 text-right inline-block text-(--color-light-background) textfont-bold text-6xl text-wrap`}>
             {date}
           </div>
+
+          {/* bullet points */}
+          <ul
+            className={`w-1/2 rounded-md font-sans font-semibold text-(--davys-gray) absolute top-1/4 pl-4 ml-4 text-2xl list-none text-m space-y-7 transition-all duration-1500 ease-in-out cursor-pointer
+              ${isTop ? "translate-x-0" : "translate-x-80"}`}
+          >
+            {bullets.map((desc, index) => {
+              const [glyph, setGlyph] = useState(glyphs[0]);
+
+              useEffect(() => {
+                const interval = setInterval(() => {
+                  setGlyph(glyphs[Math.floor(Math.random() * glyphs.length)]);
+                }, 400 + Math.random() * 600);
+                return () => clearInterval(interval);
+              }, []);
+
+              return (
+                <li
+                  key={index}
+                  className="before:mr-5 before:inline-block relative group left-[45%]"
+                >
+                  <span className="absolute -left-4">{glyph}</span>
+
+                  {desc.split(" ").map((word, i) => {
+                    const isKeyword = keywords.includes(word.toLowerCase());
+                    return (
+                      <span
+                        key={i}
+                        className={`
+                          transition-colors duration-100 drop-shadow-md
+                          ${isKeyword ? "group-hover:text-[--color-light-background] group-hover:bg-white" : ""}
+                        `}
+                      >
+                        {word}{" "}
+                      </span>
+                    );
+                  })}
+                </li>
+              );
+            })}
+          </ul>
 
           {/* SKILLS STRIP */}
           <div className="absolute flex left-80 gap-2 mt-3 bottom-5 overflow-visible z-10 marquee-container content-center 
@@ -162,46 +203,7 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
           {displayName}
         </h1>
 
-        {/* bullet points */}
-        <ul
-          className={`rounded-md font-sans font-semibold text-(--davys-gray) absolute top-1/4 pl-4 ml-4 text-2xl list-none text-m space-y-10 transition-all duration-1500 ease-in-out cursor-pointer
-            ${isTop ? "translate-x-0" : "translate-x-80"}`}
-        >
-          {bullets.map((desc, index) => {
-            const [glyph, setGlyph] = useState(glyphs[0]);
-
-            useEffect(() => {
-              const interval = setInterval(() => {
-                setGlyph(glyphs[Math.floor(Math.random() * glyphs.length)]);
-              }, 400 + Math.random() * 600);
-              return () => clearInterval(interval);
-            }, []);
-
-            return (
-              <li
-                key={index}
-                className="before:mr-2 before:inline-block relative group"
-              >
-                <span className="absolute -left-4">{glyph}</span>
-
-                {desc.split(" ").map((word, i) => {
-                  const isKeyword = keywords.includes(word.toLowerCase());
-                  return (
-                    <span
-                      key={i}
-                      className={`
-                        transition-colors duration-100 drop-shadow-md
-                        ${isKeyword ? "group-hover:text-[--color-light-background] group-hover:bg-white" : ""}
-                      `}
-                    >
-                      {word}{" "}
-                    </span>
-                  );
-                })}
-              </li>
-            );
-          })}
-        </ul>
+        
 
       </div>
       {/* post mortem */}
