@@ -36,7 +36,7 @@ function App() {
         <div onClick={() => setGridShow(true)}><VerticalLabel text="mentor" color="text-(--saffron)" bgcolor="bg-(--raspberry)"/></div>
         <div onClick={() => setGridShow(true)}><VerticalLabel text="designer" color="text-(--color-tertiary)" bgcolor="bg-(--color-primary)"/></div>
         <div onClick={() => setGridShow(true)}><VerticalLabel text="daydreamer" color="text-(--bittersweet)" bgcolor="bg-(--saffron)"/></div>
-      </div>*/}
+      </div>
       <div className="absolute w-screen aspect-[9/10] top-0 bg-(--saffron)">
         <TextPrompt label="hello. " setShow={setIntro01} rules="z-10 w-full text-black text-5xl font-semibold" />
           {intro01 && <TextPrompt label="my name is fern. " setShow={setIntro02} rules="z-10  w-full text-black text-5xl font-semibold"/>}
@@ -44,30 +44,58 @@ function App() {
           {intro03 && <TextPrompt label="for ideas i think are cool. " setShow={setIntro04} rules="z-10 w-full text-black text-5xl font-semibold" />}
           {intro04 && <TextPrompt label="here are some of them. " setShow={setIntro05} rules="z-10 w-full text-black text-5xl font-semibold" />}
           {intro05 && <TextPrompt label="enjoy. " setShow={setIntro05} rules="z-10 w-full text-black text-5xl font-semibold" />}
-      </div>
+      </div>*/}
 
-      { !gridShow && <div className="absolute top-0 grid grid-cols-2 grid-rows-4 w-screen bg-(--saffron)" ref={gridRef}>
+      <main className="flex min-h-screen">
+        {/* Left section */}
+        <section className="flex-1 bg-gray-100 p-8">
+          <h1 className="text-2xl font-bold">Main Content</h1>
+          <p>Put your primary content here.</p>
+        </section>
 
-        {projects.map((project) => {
+        {/* Right section */}
+        <aside className="w-3/5 bg-white border-l border-gray-200 p-8">
+          <h2 className="text-xl font-semibold">Sidebar</h2>
+          <p>Additional info or widgets here.</p>
+          <div>
+            {projects.map((project) => (
+              <GameCard
+                key={project.id}
+                index={project.id}
+                name={project.title}
+                date={project.date}
+                image={project.image}
+                link={project.link}
+                bullets={project.bullets}
+                selectedIndex={selectedIndex}
+                skills={project.skills}
+                text={project.text}
+                setSelectedIndex={setSelectedIndex}
+              />
+            ))}
+          </div>
+        </aside>
+      </main>
 
-          return (
-            <GameCard
-              index = {project.id}
-              name = {project.title}
-              date = {project.date}
-              image = {project.image}
-              link = {project.link}
-              bullets = {project.bullets}
-              selectedIndex = {selectedIndex}
-              skills = {project.skills}
-              text = {project.text}
-              setSelectedIndex = {setSelectedIndex}
-            />
-          )
+      {/*{projects.map((project) => {
 
-        })};
+        return (
+          <GameCard
+            index = {project.id}
+            name = {project.title}
+            date = {project.date}
+            image = {project.image}
+            link = {project.link}
+            bullets = {project.bullets}
+            selectedIndex = {selectedIndex}
+            skills = {project.skills}
+            text = {project.text}
+            setSelectedIndex = {setSelectedIndex}
+          />
+        )
 
-      </div> }
+      })};*/}
+
     </div>
   )
 }

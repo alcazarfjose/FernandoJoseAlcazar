@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 @theme {
-  --color-background: #FDC74Dff;
+  --color-background: #FFFFFF;
   --color-light-background: #fdd372;
   --color-primary: #f7c9b6;
   --color-secondary: #dbc39a;
