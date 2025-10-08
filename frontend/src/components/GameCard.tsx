@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SkillPills from "./SkillsPills";
-const glyphs = ["₊˚", "✦", "✧", "*:", "☆", "☄", "✺", "❖", " "];
+const glyphs = ["₊˚", "✦", "✧", "*:", "☆", "✺", "❖", " "]; //"☄"
 // https://manonghignoni.wixsite.com/portfolio
 
 const keywords = ["unity", "netcode", "relay", "ui"];
