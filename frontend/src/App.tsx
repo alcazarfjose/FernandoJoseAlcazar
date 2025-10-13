@@ -7,10 +7,10 @@ import SocialButton from "./components/LinkButton";
 
 function App() {
 
-
-
+  // DATA VARIABLES
   const keywords = ["unity", "netcode", "relay", "ui"];
 
+  // PROJECT DISPLAY VARIABLES
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const [selectedTitle, setSelectedTitle] = useState("")
   const [selectedDate, setSelectedDate] = useState("")
@@ -19,6 +19,15 @@ function App() {
     setSelectedIndex(id);
   };
 
+  // EMAIL VARIABLES
+  const [copied, setCopied] = useState(false);
+  const copyEmail = () => {
+    navigator.clipboard.writeText("alcazarfjose@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  // SOCIALS
   const socials = [
     { image: `socialIcons__Itch.svg`, link: "https://cannedcorgies.itch.io/", color: "#fa5c5c" },
     { image: `socialIcons__GitHub.svg`, link: "https://github.com/alcazarfjose", color: "#6cc644" },
@@ -26,6 +35,7 @@ function App() {
     { image: `socialIcons__LinkedIn.svg`, link: "https://www.linkedin.com/in/alcazarfjose/", color: "#0077b0" }
   ];
 
+  // SHIMMERING VARIABLES
   const glyphs = ["₊˚", "✦", "✧", "*:", "☆", "✺", "❖", " "]; //"☄"
   const glyphRefs = useRef<(HTMLSpanElement | null)[]>([]);
   useEffect(() => {
@@ -44,11 +54,21 @@ function App() {
     <main className="flex min-h-screen">
 
       {/* left section - fixed info display */}
-      <section className="w-2/5 fixed flex flex-col top-0 left-0 h-screen bg-gray-100 p-8 overflow-y-auto text-7xl">
+      <section className="w-2/5 fixed flex flex-col top-0 left-0 h-screen bg-gray-100 overflow-y-auto text-7xl">
 
         {/* HEADER */}
-        <div className="w-full h-1/4">
+        <div className="w-full h-1/4 p-8 flex flex-row justify-between">
           {(selectedIndex !== null) && <ShimmeringText text={(selectedIndex == -1) ? "hi. my name is fern." : projects[projects.length - selectedIndex + 1].subtitle} /> }
+          {selectedIndex != -1 && (
+            <button
+              onClick={() => setSelectedIndex(-1)}
+              className="text-gray-500 w-1/8 h-1/2 border border-gray-400 px-3 py-1
+                        hover:bg-gray-200 hover:text-black hover:cursor-pointer transition-all duration-200"
+            >
+              ✕
+            </button>
+
+          )}
         </div>
 
         {/* VARIABLE INFO */}
@@ -57,13 +77,18 @@ function App() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="w-full h-1/2"
+          className="w-full h-1/2 p-8"
         >
 
           {/* FERN INFO */}
-          {(selectedIndex == -1) && <div>
-            <p className="">i make games. for small ideas i think are cool</p>
-          </div>}
+          {selectedIndex == -1 && (
+            <div className="text-5xl space-y-8">
+              <p>i make games</p>
+              <p>for small ideas i think are cool.</p>
+              <p>here are some of them.</p>
+            </div>
+          )}
+
 
           {/* PROJECT INFO */}
           {(selectedIndex != -1) && <div className="relative w-full h-full">
@@ -102,7 +127,7 @@ function App() {
               cursor-pointer
               transition-transform duration-300 ease-in-out
               hover:scale-105">
-                <div className="flex gap-2 text-[--color-light-background] font-bold group-hover:scale-110 marquee-content">
+                <div className="flex gap-2 text-[--color-light-background] font-bold group-hover:scale-110 marquee-content animate-pulse">
                   {projects[projects.length - selectedIndex + 1].skills.map((skill, index) => (
                     <span
                       key={index}
@@ -119,20 +144,43 @@ function App() {
         </motion.div>
 
         {/* SOCIALS */}
+        {(selectedIndex === -1) &&
+          <div className="w-full h-1/10 flex flex-row text-3xl text-center">
+          <button
+            onClick={copyEmail}
+            className="flex w-1/2 items-center justify-center text-gray-500 px-6 py-3
+                      border border-gray-300
+                      hover:bg-gray-200 transition-all duration-300 hover:cursor-pointer"
+          >
+            <span>{copied ? "copied!" : "alcazarfjose@gmail.com"}</span>
+          </button>
+
+          <a
+            href="/FernandoJoseAlcazar__Resume.pdf"
+            download="FernandoJoseAlcazar__Resume.pdf"
+            className="flex w-1/2 items-center justify-center text-gray-500 px-6 py-3
+                      border border-gray-300
+                      hover:bg-gray-200 transition-all duration-300"
+          >
+            <span>download résumé</span>
+          </a>
+        </div>}
+        
         <div className="w-full h-1/4 bg-blue-500 flex flex-row overflow-hidden">
           {socials.map((s, i) => (
             <SocialButton key={i} image={s.image} link={s.link} color={s.color}/>
           ))}
         </div>
+      
 
       </section>
 
       {/* right section - gallery */}
       <aside className="ml-[40%] w-3/5 bg-white border-gray-200 p-8 flex">
-        <h1 className="fixed text-9xl w-1/3 break-words text-bold z-20" >
+        <h1 className="fixed text-8xl 3xl:text-9xl w-2/7 break-words text-bold z-20" >
           {`${(!hovering && selectedIndex != -1) ? projects[projects.length - selectedIndex + 1].title : selectedTitle}` }
         </h1>
-        <h1 className="fixed w-1/4 text-right top-1/2 left-2/5 text-9xl w-1/3 break-words text-bold z-0 text-gray-200">
+        <h1 className="fixed w-1/4 text-right bottom-1/8 left-2/5 text-9xl w-1/3 break-words text-bold z-0 text-gray-200">
           {`${(!hovering && selectedIndex != -1) ? projects[projects.length - selectedIndex + 1].date : selectedDate}`}
         </h1>
 

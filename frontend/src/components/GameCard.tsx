@@ -91,14 +91,14 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
   }, [isTop, name]);
 
   return (
-    <div className="w-full group-hover:scale-[1.1] aspect-[16/9] relative content-center overflow-hidden">
+    <div className="w-full group-hover:scale-[1.1] aspect-[16/9] relative content-center overflow-hidden"style={{ backgroundColor: "#fa5c5c" }}>
       
       {/* link */}
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a href={link} target="_blank" rel="noopener noreferrer " className="w-1/5 absolute bottom-2 right-2">
         <img
-          src={images[`../assets/images/${"itchPanel.png"}`]}
+          src={images[`../assets/images/${"socialIcons__Itch.svg"}`]}
           alt={"Itch Panel"}
-          className="w-full absolute bottom-0 left-45 scale-85 translate-x-1/8 translate-y-3/8 hover:scale-95 transition-transform duration-150 ease-in-out"
+          className="hover:scale-95 transition-transform duration-150 ease-in-out"
         />
       </a>
 

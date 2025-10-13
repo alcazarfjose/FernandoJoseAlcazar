@@ -15,6 +15,7 @@
   --bittersweet: #F45C50ff;
   --raspberry: #DB2556ff;
   --light-sea-green: #01B1B0ff;
+  --breakpoint-3xl: 120rem;
 }
 
 @keyframes marquee {
