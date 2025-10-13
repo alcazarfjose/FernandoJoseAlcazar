@@ -15,6 +15,8 @@ type GameCardProps = {
   selectedIndex: number | null;
   selectedTitle: string;
   setSelectedTitle: React.Dispatch<React.SetStateAction<string>>
+  selectedDate: string;
+  setSelectedDate: React.Dispatch<React.SetStateAction<string>>
   skills: string[];
   text: string;
   setSelectedIndex: React.Dispatch<React.SetStateAction<number | null>>;
@@ -26,7 +28,7 @@ const images = import.meta.glob("../assets/images/*", { eager: true, import: "de
 
 let savedTitle = "";
 
-const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, link, selectedIndex, selectedTitle, setSelectedTitle, skills, text, setSelectedIndex, hovering, setHovering }) => {
+const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, link, selectedIndex, selectedTitle, setSelectedTitle, selectedDate, setSelectedDate, skills, text, setSelectedIndex, hovering, setHovering }) => {
   //const [isTop, setIsTop] = useState(false);
   const isTop = selectedIndex === index;
   const [showText, setShowText] = useState(false);
@@ -40,12 +42,13 @@ const GameCard: React.FC<GameCardProps> = ({ index, name, date, bullets, image, 
 
   const hoverOn = () => {
     setSelectedTitle(name);
+    setSelectedDate(date);
     setHovering(true);
     console.log(selectedTitle);
   };
 
   const hoverOff = () => {
-    if (selectedIndex === -1) { setSelectedTitle(""); }
+    if (selectedIndex === -1) { setSelectedTitle(""); setSelectedDate("")}
     setHovering(false);
   };
 
