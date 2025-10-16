@@ -42,7 +42,7 @@
       "prototype for a physics-based interactions platformer",
       "custom physics for expressive controls",
       "procedural animations for organic collision reaction",
-      "core pulse mechanic for communicating with environment"
+      "core pulse mechanic for interacting with environment"
     ],
     "subtitle": "stay tuned",
     "size": "small",
@@ -73,7 +73,7 @@
       "\"hopping\" UI interface system for gesture-based minigames",
       "experiential kinetic verbs to serve experiential gameplay"
     ],
-    "subtitle": "",
+    "subtitle": "Time for school!",
     "size": "large",
     "image": "fresas.gif",
     "color": [
@@ -132,7 +132,7 @@
     "bullets": [
       "a short interactive rocket launch sequence",
       "diverse player verbs and UI panels inspired by Rube-Goldberg machines",
-      "algorithmic music akin to live-coding, to convey rising tension"
+      "algorithmic music inspired by live-coding"
     ],
     "subtitle": "See you, Major Redwick.",
     "size": "large",
@@ -160,9 +160,9 @@
     ],
     "bullets": [
       "simple music box winding interaction with \"flashback\" events",
-      "early exploration of gesture cause-and-effects",
-      "broken UI to display ",
-      "music produced through pitch-shifting trigger objects"
+      "experimented with core kinectic gesture verb",
+      "broken UI to combine different scenes",
+      "music produced through pitch-shifting triggers"
     ],
     "subtitle": "Too old.",
     "size": "large",
@@ -188,7 +188,11 @@
       "physics programmer",
       "sound designer"
     ],
-    "bullets": [],
+    "bullets": [
+      "four distinct control schemes for abstract wind gameplay",
+      "FMOD Studio for immersive 3D audio",
+      "springs and joints to telegraph player impact"
+    ],
     "subtitle": "",
     "size": "small",
     "image": "Prototype__Wind01.gif",
@@ -213,8 +217,12 @@
       "physics programmer",
       "sound designer"
     ],
-    "bullets": [],
-    "subtitle": "",
+    "bullets": [
+      "exploration on mathematical juice for expressive environment",
+      "procedurally animated feedback for physics-based gameplay",
+      "algorithmically generated spider web for organic setting"
+    ],
+    "subtitle": "can you water my plants while i'm gone?",
     "size": "small",
     "image": "Prototype__Garden.gif",
     "color": [
@@ -235,8 +243,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
-    "subtitle": "we will never meet.",
+    "bullets": [
+      "microgame exhibit of co-op interaction",
+      "repellent players that can never touch"
+    ],
+    "subtitle": "they will never meet.",
     "size": "small",
     "image": "Prototype__TwoHearts.gif",
     "color": [
@@ -260,7 +271,11 @@
       "3D artist",
       "sound designer"
     ],
-    "bullets": [],
+    "bullets": [
+      "short immersive experience finding friends in the rain",
+      "neon palette and surreal post processing for retro aesthetic",
+      "world wrap-around and breadcrumb trails to improve player direction"
+    ],
     "subtitle": "From the heart.",
     "size": "small",
     "image": "Umbrella.gif",
@@ -284,7 +299,11 @@
       "constellations programmer",
       "UI/ UX"
     ],
-    "bullets": [],
+    "bullets": [
+      "cooperatively-developed p5.js music synthesizer",
+      "procedural constellations with pitch-shifting guitar strings",
+      "contributed graph traversal for musical chain reactions"
+    ],
     "subtitle": "Symphony of stars.",
     "size": "small",
     "image": "Product__Staccato.gif",
@@ -308,7 +327,11 @@
       "technical artist",
       "level designer"
     ],
-    "bullets": [],
+    "bullets": [
+      "experimental first-person horror puzzle-platformer",
+      "engineered custom experimental gravity system for dynamic gravitational direction to support open-ended level design",
+      "appeals to one-handed accessibility measure"
+    ],
     "subtitle": "Reach for the light.",
     "size": "large",
     "image": "Product__Lamplight03.gif",
