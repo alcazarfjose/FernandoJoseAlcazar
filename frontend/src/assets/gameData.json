@@ -189,11 +189,11 @@
       "sound designer"
     ],
     "bullets": [
-      "four distinct control schemes for abstract wind gameplay",
+      "four distinct control schemes for abstract physics-based wind gameplay",
       "FMOD Studio for immersive 3D audio",
       "springs and joints to telegraph player impact"
     ],
-    "subtitle": "",
+    "subtitle": "from the morning.",
     "size": "small",
     "image": "Prototype__Wind01.gif",
     "color": [
@@ -329,8 +329,8 @@
     ],
     "bullets": [
       "experimental first-person horror puzzle-platformer",
-      "engineered custom experimental gravity system for dynamic gravitational direction to support open-ended level design",
-      "appeals to one-handed accessibility measure"
+      "custom physics system for dynamic gravitational direction",
+      "gesture-based mechanics for one-handed gameplay"
     ],
     "subtitle": "Reach for the light.",
     "size": "large",
@@ -353,8 +353,12 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
-    "subtitle": "Okay, three, two, one, let's jam.",
+    "bullets": [
+      "prototype for a gravity-focused parkour experience",
+      "platforming design mechanics for forgiving gameplay (e.g. coyote time, cooldowns)",
+      "dynamic UI feedback and FOV serve action telegraphing"
+    ],
+    "subtitle": "Okay, 3-2-1 let's jam.",
     "size": "small",
     "image": "Prototype__Parkour.gif",
     "color": [
@@ -375,7 +379,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "prototype for high-stakes space peril set-piece",
+      "physics-based tool-assisted movement system",
+      "cracked-screen UI element for unique rear-view feature"
+    ],
     "subtitle": "Ground control to Major fern...",
     "size": "small",
     "image": "Prototype__ComfortablyNumb.gif",
@@ -391,7 +399,7 @@
   },
   {
     "id": 15,
-    "title": "Elevator Pitch (Round 03",
+    "title": "Elevator Pitch (Round 02)",
     "date": "March 2024",
     "skills": [
       "unity engine lead",
@@ -400,7 +408,11 @@
       "level designer",
       "physics programmer"
     ],
-    "bullets": [],
+    "bullets": [
+      "vertical slice for physics-based puzzle platformer",
+      "prototyping gesture-based gravity-shifting navigational mechanic",
+      "liminal environment and grainy visuals for found-footage aesthetics"
+    ],
     "subtitle": "Go to the light!",
     "size": "small",
     "image": "ElevatorPitch01.gif",
@@ -422,7 +434,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "microgame to observe bugs on their way to work",
+      "object queue to return out-of-view bugs to the path start",
+      "pointer action to interact with migration through boots"
+    ],
     "subtitle": "Small world.",
     "size": "small",
     "image": "Prototype__EarlyMorningTraffic.gif",
@@ -444,7 +460,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "two player objects with diverse range of motion",
+      "arm moves as a pivot to inspect insect",
+      "lady bug moves pulled into the gravity of the arm"
+    ],
     "subtitle": "We are together.",
     "size": "small",
     "image": "Prototype__TheLadybugAndMe.gif",
@@ -466,7 +486,10 @@
       "unity engine lead",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "graybox prototype for game about interacting with environment through universal verb",
+      "push-and-pull gesture works for navigation, scaling, moving, and rotating objects"
+    ],
     "subtitle": "Power in the palm of your hand.",
     "size": "small",
     "image": "Prototype__ElevatorPitch04.gif",
@@ -488,7 +511,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "graybox prototype for game about platforming over soundwaves",
+      "each block of a platform stretches in accordance with set frequency range",
+      "multiple scenarios include platforming, puzzle-solving, tone-setting, story-telling"
+    ],
     "subtitle": "Jump on the dance floor!",
     "size": "small",
     "image": "Prototype__Soundwaves.gif",
@@ -510,7 +537,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "short prototype for teleportation mechanic",
+      "distance-calculation increases momentum for farther warps",
+      "hitstun and freeze-frames for gameplay feedback"
+    ],
     "subtitle": "nyyyOOooommmmm...",
     "size": "small",
     "image": "Prototype__Teleporting.gif",
@@ -532,7 +563,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "graybox prototype for vessel-sharing co-op experience",
+      "players control two separate boxes which can combine into a heavier character for puzzle-solving",
+      "separating triggers acrobatic physics reactions"
+    ],
     "subtitle": "Two's a crowd...",
     "size": "small",
     "image": "Prototype__StickTogether.gif",
@@ -554,7 +589,11 @@
       "unreal engine",
       "grow programmer"
     ],
-    "bullets": [],
+    "bullets": [
+      "experimental collaborative art project",
+      "contributed proximity-aging mechanic",
+      "*flowers grow faster when they are closer to the player"
+    ],
     "subtitle": "Nothing lasts forever.",
     "size": "small",
     "image": "Grow.gif",
@@ -576,7 +615,11 @@
       "javaScript",
       "phaser.js"
     ],
-    "bullets": [],
+    "bullets": [
+      "one-button versus rhythm game",
+      "simple timing gameplay loop with strong visual feedback",
+      "minimalistic rules encourage creative player agreements"
+    ],
     "subtitle": "One button to rule them all!",
     "size": "small",
     "image": "Ripple.gif",
@@ -598,7 +641,11 @@
       "javaScript",
       "phaser.js"
     ],
-    "bullets": [],
+    "bullets": [
+      "challenging physics-based endless runner",
+      "custom physics for high-stakes momentum-conservation",
+      "noisy feedback language for high intensity"
+    ],
     "subtitle": "How far can you go?",
     "size": "small",
     "image": "Prototype__DrillDrillDrill.gif",
@@ -621,7 +668,11 @@
       "prototyper",
       "technical artist"
     ],
-    "bullets": [],
+    "bullets": [
+      "short set-piece experimenting with Unity aesthetic features",
+      "render texture to accomplish pixelated effect",
+      "juice includes 3D audio, spring joints, light effects"
+    ],
     "subtitle": "[bahhhhh]",
     "size": "small",
     "image": "sheep.gif",
@@ -643,7 +694,11 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "graybox prototype for time manipulation mechanic",
+      "\"time terminal\" to dictate objects pulled out of flow of time",
+      "combine timeflow with physics-manipulation for momentum-carrying puzzles"
+    ],
     "subtitle": "Take charge of time.",
     "size": "small",
     "image": "Prototype__TimeDilation.gif",
@@ -665,7 +720,9 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "small experiment using physics and raycast detection in unity"
+    ],
     "subtitle": "[No affiliation with Nintendo]",
     "size": "small",
     "image": "Prototype__Kirby'sDreamCourse.gif",
@@ -687,7 +744,9 @@
       "unity",
       "prototyper"
     ],
-    "bullets": [],
+    "bullets": [
+      "hellish platforming prototype inspired by getting over it"
+    ],
     "subtitle": "Gotta start somewhere!",
     "size": "small",
     "image": "Prototype__Flick.gif",

@@ -62,12 +62,13 @@ function App() {
           {selectedIndex != -1 && (
             <button
               onClick={() => setSelectedIndex(-1)}
-              className="text-gray-500 w-1/8 h-1/2 border border-gray-400 px-3 py-1
-                        hover:bg-gray-200 hover:text-black hover:cursor-pointer transition-all duration-200"
+              className="flex items-center justify-center text-gray-500 
+                        w-8 h-8 border border-gray-400 
+                        hover:bg-gray-200 hover:text-black hover:cursor-pointer transition-all duration-200 
+                        text-xl sm:text-2xl"
             >
               ✕
             </button>
-
           )}
         </div>
 
@@ -152,17 +153,17 @@ function App() {
                       border border-gray-300
                       hover:bg-gray-200 transition-all duration-300 hover:cursor-pointer"
           >
-            <span>{copied ? "copied!" : "alcazarfjose@gmail.com"}</span>
+            <span className="truncate">{copied ? "copied!" : "alcazarfjose@gmail.com"}</span>
           </button>
 
           <a
             href="/FernandoJoseAlcazar__Resume.pdf"
             download="FernandoJoseAlcazar__Resume.pdf"
-            className="flex w-1/2 items-center justify-center text-gray-500 px-6 py-3
-                      border border-gray-300
-                      hover:bg-gray-200 transition-all duration-300"
+            className="flex w-1/2 items-center justify-center text-gray-500 px-6 py-3 
+                      border border-gray-300 hover:bg-gray-200 transition-all duration-300 
+                      overflow-hidden text-ellipsis whitespace-nowrap"
           >
-            <span>download résumé</span>
+            <span className="truncate">download résumé</span>
           </a>
         </div>}
         
